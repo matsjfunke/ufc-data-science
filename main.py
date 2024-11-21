@@ -9,6 +9,7 @@ from skimpy import skim
 
 from general_importance_plot import general_feature_importance
 from height_reach_plot import height_reach_plot
+from win_weightclass_boxplot import plot_win_percentage_by_weight_class
 
 # Read CSV
 df = pd.read_csv("./ufc-fighters-statistics.csv", sep=",", index_col=0)
@@ -43,6 +44,10 @@ df["age"] = (
     )
 )
 
+# Sort by age in descending order and drop duplicates based on the index (name)
+df = df.sort_values(by="age", ascending=False)
+df = df[~df.index.duplicated(keep="first")]
+
 # calculate & add  total_fights & win_percentage columns
 df["total_fights"] = df["wins"] + df["losses"] + df["draws"]
 df["win_percentage"] = round((df["wins"] / df["total_fights"]) * 100, 2)
@@ -67,7 +72,7 @@ df["stance"] = df["stance"].astype("category")
 skim(df)
 
 # analize and plot height & reach
-height_reach_plot(df, save=True, show=False)
+height_reach_plot(df, save=True)
 
 features = [
     "submissions_attempted_per_15_minutes",
@@ -81,4 +86,6 @@ features = [
     "significant_striking_accuracy",
 ]
 
-general_feature_importance(df, features, save=True, show=True)
+general_feature_importance(df, features, save=True)
+
+plot_win_percentage_by_weight_class(df, save=True)

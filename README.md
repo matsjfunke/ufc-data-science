@@ -39,4 +39,32 @@ Although features like "takedowns landed per 15 minutes" & "significant strikes 
 The wide scatter of data points around the regression lines suggests significant variability not explained by these features alone.
 A more comprehensive model that includes multiple factors might be necessary for better prediction of success.
 
-3. Whats more important strikes or takedowns?
+R^2 Explanation: An R^2 value close to 0 suggests that the feature does not contribute significantly to predicting the outcome. In this case, all features have values near 0, indicating they are poor standalone predictors of win percentage.
+
+```sh
+submissions_attempted_per_15_minutes: R^2 = 0.00
+takedowns_landed_per_15_minutes: R^2 = 0.03
+significant_strikes_landed_per_minute: R^2 = 0.03
+height_cm: R^2 = 0.00
+reach_in_cm: R^2 = 0.00
+takedown_defense: R^2 = 0.00
+takedown_accuracy: R^2 = 0.00
+significant_strike_defence: R^2 = 0.00
+significant_striking_accuracy: R^2 = 0.03
+```
+
+3. How do win percentages vary across different weight classes, and are there significant outliers in performance within each class?
+
+![win percentage across weight classes](./plots/win_weightclasses_boxplot.png)
+
+The boxplot provides insights into how win percentages vary across different weight classes and highlights any significant outliers:
+Most weight classes have a median win percentage around 70-80%. This central tendency suggests a generally high level of performance across classes.
+The interquartile range (IQR) is similar across classes, indicating consistent variability in win percentages.
+Each weight class shows some outliers, indicated by the points outside the whiskers, outliers represent fighters with significantly lower or higher win percentages compared to their peers in the same class.
+
+While the medians are similar, there are slight differences in range and outlier distribution, which could indicate **varying competitiveness** across classes.
+Overall, the boxplot suggests a generally consistent performance level across weight classes, with some individual outliers in each class.
+
+4. How would I stack up against my weight class based on my pyshical attributes?
+
+enter your weight and height and reach to get your estimated win percentage.

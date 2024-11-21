@@ -3,7 +3,7 @@ import pandas as pd
 import seaborn as sns
 
 
-def height_reach_plot(df, save=False, show=True):
+def height_reach_plot(df, save=False):
     # Calculate the correlation
     correlation = df["height_cm"].corr(df["reach_in_cm"])
 
@@ -64,5 +64,4 @@ def height_reach_plot(df, save=False, show=True):
     if save:
         plt.savefig("plots/height_reach_plot.png")
 
-    if show:
-        plt.show()
+    plt.show()
