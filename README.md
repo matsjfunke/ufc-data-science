@@ -11,7 +11,7 @@ Through this data analysis, I aim to uncover insights and answers to these intri
 
 # Dataset
 
-I'm conducting my analysis on the 
+I'm conducting my analysis on the
 [UFC Fighters' Statistics Dataset from Kaggle](https://www.kaggle.com/datasets/asaniczka/ufc-fighters-statistics).
 
 The overall data quality is generally good, as it's fairly recent and up to date.
@@ -68,10 +68,43 @@ Overall, the boxplot suggests a generally consistent performance level across we
 
 # Conclusion
 
-The analysis demonstrates that while certain physical attributes and fighting styles have some impact on a fighter's success, no single factor serves as a strong predictor. 
+The analysis demonstrates that while certain physical attributes and fighting styles have some impact on a fighter's success, no single factor serves as a strong predictor.
 The findings suggest the need for more complex models to better understand and predict UFC fight outcomes.
 
 ### Suggestions for Further Analysis:
 
 **Incorporate Additional Data**: Consider integrating more variables, such as fight history, training regimen, or psychological factors, to enhance the predictive model.
 **Explore Non-Linear Models**: Since linear regression shows weak correlations, exploring non-linear model
+
+# Repo Structure & Usage
+
+**Filetree**:
+
+```sh
+├── README.md                              # documentation
+├── app.py                                 # streamlit dashboard
+├── general_importance_plot.py             # plot of linear regressions applied to all important columns
+├── height_reach_plot.py                   # plot aout height and reach correlation and thier correlation with win percentage
+├── main.py                                # main entrypoint and pandas data wrangling
+├── plots                                  # plots get saved here
+│   ├── features_linear_regression.png
+│   ├── height_reach_plot.png
+│   └── win_weightclass_boxplot.png
+├── requirements.txt                       # dependencies
+├── ufc-fighters-statistics.csv            # dataset CSV
+└── win_weightclass_boxplot.py             # plot of win percentage in differen weight classes
+```
+
+**Running Scripts**:
+
+```sh
+# install dependencies
+python -m venv venv
+source venv/bin/activate
+
+# process data and to view plots uncommit the docstring
+python main.py
+
+# view streamlit dashboard
+streamlit run app.py
+```
