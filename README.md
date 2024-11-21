@@ -11,7 +11,8 @@ Through this data analysis, I aim to uncover insights and answers to these intri
 
 ## Dataset
 
-I'm conducting my analysis on the [UFC Fighters' Statistics Dataset from Kaggle](!https://www.kaggle.com/datasets/asaniczka/ufc-fighters-statistics).
+I'm conducting my analysis on the 
+[UFC Fighters' Statistics Dataset from Kaggle](https://www.kaggle.com/datasets/asaniczka/ufc-fighters-statistics).
 
 The overall data quality is generally good, as it's fairly recent and up to date.
 However, there were a few rows with missing values that I needed to remove.
