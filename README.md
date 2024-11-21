@@ -102,7 +102,7 @@ The findings suggest the need for more complex models to better understand and p
 python -m venv venv
 source venv/bin/activate
 
-# process data and to view plots uncommit the docstring
+# process data and to view plots uncomment the docstring
 python main.py
 
 # view streamlit dashboard
