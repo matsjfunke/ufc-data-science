@@ -4,9 +4,10 @@ matsjfunke
 
 from datetime import datetime
 
-import matplotlib.pyplot as plt
 import pandas as pd
 from skimpy import skim
+
+from height_reach_plot import height_reach_plot
 
 # Read CSV
 df = pd.read_csv("./ufc-fighters-statistics.csv", sep=",", index_col=0)
@@ -39,12 +40,21 @@ df["win_percentage"] = round((df["wins"] / df["total_fights"]) * 100, 2)
 
 
 # Assign weight classes
-bins = [52.5, 56.7, 61.2, 65.8, 70.3, 77.1, 83.9, 102.1, 120.2, float("inf")]
+def assign_weight_class(weight, bins, labels):
+    for i in range(len(bins) - 1):
+        if bins[i] <= weight < bins[i + 1]:
+            return labels[i]
+    return None
+
+
+bins = [52.5, 56.7, 61.2, 65.8, 70.3, 77.1, 83.9, 93.0, 120.2, float("inf")]
 labels = ["straw", "fly", "bantam", "feather", "light", "welter", "middle", "light-heavy", "heavy"]
-df["weight_class"] = pd.cut(df["weight_in_kg"], bins=bins, labels=labels, right=True)
+df["weight_class"] = df["weight_in_kg"].apply(lambda w: assign_weight_class(w, bins, labels)).astype("category")
 
 # Convert the 'stance' column to category data type
 df["stance"] = df["stance"].astype("category")
 
 # view cleaned data
 skim(df)
+
+height_reach_plot(df, save=True)
