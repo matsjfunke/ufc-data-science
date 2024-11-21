@@ -3,10 +3,9 @@ import pandas as pd
 import seaborn as sns
 
 
-def height_reach_plot(df, save=False):
+def height_reach_plot(df, save=False, show=True):
     # Calculate the correlation
     correlation = df["height_cm"].corr(df["reach_in_cm"])
-    print(f"The correlation between height and reach is: {correlation}")
 
     # Define a consistent colors
     height_color = "#eb4034"
@@ -65,5 +64,5 @@ def height_reach_plot(df, save=False):
     if save:
         plt.savefig("plots/height_reach_plot.png")
 
-    # Show the plot
-    plt.show()
+    if show:
+        plt.show()

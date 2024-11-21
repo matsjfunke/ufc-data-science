@@ -7,6 +7,7 @@ from datetime import datetime
 import pandas as pd
 from skimpy import skim
 
+from general_importance_plot import general_feature_importance
 from height_reach_plot import height_reach_plot
 
 # Read CSV
@@ -19,6 +20,14 @@ df = df.dropna()
 # Dataframe overview
 print(df.head())
 print(f"Dataframe has {df.shape[1]} columns and {df.shape[0]} rows")
+
+# renamed columns
+df = df.rename(
+    columns={
+        "average_takedowns_landed_per_15_minutes": "takedowns_landed_per_15_minutes",
+        "average_submissions_attempted_per_15_minutes": "submissions_attempted_per_15_minutes",
+    }
+)
 
 # ensure 'date_of_birth' is in datetime format
 df["date_of_birth"] = pd.to_datetime(df["date_of_birth"])
@@ -57,4 +66,19 @@ df["stance"] = df["stance"].astype("category")
 # view cleaned data
 skim(df)
 
-height_reach_plot(df, save=True)
+# analize and plot height & reach
+height_reach_plot(df, save=True, show=False)
+
+features = [
+    "submissions_attempted_per_15_minutes",
+    "takedowns_landed_per_15_minutes",
+    "significant_strikes_landed_per_minute",
+    "height_cm",
+    "reach_in_cm",
+    "takedown_defense",
+    "takedown_accuracy",
+    "significant_strike_defence",
+    "significant_striking_accuracy",
+]
+
+general_feature_importance(df, features, save=True, show=True)

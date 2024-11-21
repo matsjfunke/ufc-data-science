@@ -30,6 +30,13 @@ Interestingly, for nearly all weight classes (6 out of 7), having a longer reach
 Especially in the bantamweight, flyweight, middleweight, and light-heavyweight divisions, a longer reach shows a strong correlation with the likelihood of winning.
 In contrast, in the welterweight class, simply being taller is more advantageous for winning.
 
-Whats more important strikes or takedowns?
+2. Out of all features which is the biggest predictor of fighting Success?
 
-Out of all the columns what is the biggest predictor of fighting Success?
+![linear regression on all features](./plots/features_linear_regression.png)
+
+The linear regression lines generally have shallow slopes, indicating weak correlations between the features and win percentage.
+Although features like "takedowns landed per 15 minutes" & "significant strikes landed per minute" display a slight positive trend, none serve as strong standalone predictors of win percentage.
+The wide scatter of data points around the regression lines suggests significant variability not explained by these features alone.
+A more comprehensive model that includes multiple factors might be necessary for better prediction of success.
+
+3. Whats more important strikes or takedowns?
