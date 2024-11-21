@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-import numpy as np
+import streamlit as st
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
 
@@ -50,3 +50,4 @@ def general_feature_importance(df, features, save=False):
         plt.savefig("./plots/features_linear_regression.png")
 
     plt.show()
+    st.pyplot(plt)

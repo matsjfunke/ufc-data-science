@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
+import streamlit as st
 
 
 def height_reach_plot(df, save=False):
@@ -65,3 +66,4 @@ def height_reach_plot(df, save=False):
         plt.savefig("plots/height_reach_plot.png")
 
     plt.show()
+    st.pyplot(plt)

@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
+import streamlit as st
 
 
 def plot_win_percentage_by_weight_class(df, save=False):
@@ -35,3 +36,4 @@ def plot_win_percentage_by_weight_class(df, save=False):
     if save:
         plt.savefig("./plots/win_weightclass_boxplot.png")
     plt.show()
+    st.pyplot(plt)
