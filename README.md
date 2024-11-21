@@ -55,7 +55,7 @@ significant_striking_accuracy: R^2 = 0.03
 
 3. How do win percentages vary across different weight classes, and are there significant outliers in performance within each class?
 
-![win percentage across weight classes](./plots/win_weightclasses_boxplot.png)
+![win percentage across weight classes](./plots/win_weightclass_boxplot.png)
 
 The boxplot provides insights into how win percentages vary across different weight classes and highlights any significant outliers:
 Most weight classes have a median win percentage around 70-80%. This central tendency suggests a generally high level of performance across classes.
@@ -64,7 +64,3 @@ Each weight class shows some outliers, indicated by the points outside the whisk
 
 While the medians are similar, there are slight differences in range and outlier distribution, which could indicate **varying competitiveness** across classes.
 Overall, the boxplot suggests a generally consistent performance level across weight classes, with some individual outliers in each class.
-
-4. How would I stack up against my weight class based on my pyshical attributes?
-
-enter your weight and height and reach to get your estimated win percentage.
