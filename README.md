@@ -9,7 +9,7 @@ Author: Mats J Funke
 I've always been intrigued by the factors that influence a fighter's chances of winning a match, whether it's their physical attributes like height and reach, or their fighting style, such as grappling or striking.
 Through this data analysis, I aim to uncover insights and answers to these intriguing questions.
 
-## Dataset
+# Dataset
 
 I'm conducting my analysis on the 
 [UFC Fighters' Statistics Dataset from Kaggle](https://www.kaggle.com/datasets/asaniczka/ufc-fighters-statistics).
@@ -21,7 +21,7 @@ Fortunately, this shouldn't be a significant issue, as I've categorized the figh
 
 # Questions
 
-1. What is the degree of correlation between height and reach, and which is a more significant factor for winning: height or reach?
+### 1. What is the degree of correlation between height and reach, and which is a more significant factor for winning: height or reach?
 
 ![height reach plot](./plots/height_reach_plot.png)
 
@@ -31,7 +31,7 @@ Interestingly, for nearly all weight classes (6 out of 7), having a longer reach
 Especially in the bantamweight, flyweight, middleweight, and light-heavyweight divisions, a longer reach shows a strong correlation with the likelihood of winning.
 In contrast, in the welterweight class, simply being taller is more advantageous for winning.
 
-2. Out of all features which is the biggest predictor of fighting Success?
+### 2. Out of all features which is the biggest predictor of fighting Success?
 
 ![linear regression on all features](./plots/features_linear_regression.png)
 
@@ -54,7 +54,7 @@ significant_strike_defence: R^2 = 0.00
 significant_striking_accuracy: R^2 = 0.03
 ```
 
-3. How do win percentages vary across different weight classes, and are there significant outliers in performance within each class?
+### 3. How do win percentages vary across different weight classes, and are there significant outliers in performance within each class?
 
 ![win percentage across weight classes](./plots/win_weightclass_boxplot.png)
 
@@ -65,3 +65,13 @@ Each weight class shows some outliers, indicated by the points outside the whisk
 
 While the medians are similar, there are slight differences in range and outlier distribution, which could indicate **varying competitiveness** across classes.
 Overall, the boxplot suggests a generally consistent performance level across weight classes, with some individual outliers in each class.
+
+# Conclusion
+
+The analysis demonstrates that while certain physical attributes and fighting styles have some impact on a fighter's success, no single factor serves as a strong predictor. 
+The findings suggest the need for more complex models to better understand and predict UFC fight outcomes.
+
+### Suggestions for Further Analysis:
+
+**Incorporate Additional Data**: Consider integrating more variables, such as fight history, training regimen, or psychological factors, to enhance the predictive model.
+**Explore Non-Linear Models**: Since linear regression shows weak correlations, exploring non-linear model
